@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Assessment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
+        <script>
+            function validateForm() {
+                var typeEarning = document.forms["myForm"]["typeEarning"].value;
+                var year = document.forms["myForm"]["year"].value;
+                var totEarning = document.forms["myForm"]["totEarning"].value;
+                var age = document.forms["myForm"]["age"].value;
+                var MedAidMember = document.forms["myForm"]["MedAidMember"].value;
+                if (totEarning == "" || age == "" || MedAidMember == "") {
+                    swal({
+                        title: "Error!",
+                        text: "Pleae dont leave textbox empty",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                    return false;
+                }else if (totEarning <0 || age <0 || MedAidMember <0) {
+                    swal({
+                        title: "Error!",
+                        text: "Pleae dont textbox cannat be less than 0",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                    return false;
+                }else if (typeEarning == "Choose..." || year == "Choose...") {
+                    swal({
+                        title: "Error!",
+                        text: "Please select the required information",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                    return false;
+                } else {
+                    swal({
+                        title: "Good job!",
+                        text: "Data had been submited succesfully!",
+                        icon: "success",
+                    });
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                    <span class="contact100-form-title">
+                        Calculate Tax
+                    </span>
+                    <span class="contact1001-form-title">
+
+                        <img src="Pictures/th2.jpg" alt="picture/th.jpg" style="width:20%; height:10%; ">
+                    </span><br><br>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="year">Tax Year</label>
+                            <select name="year" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="typeEarning">Type of Earning</label>
+                            <select name="typeEarning" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Monthly</option>
+                                <option>Annually</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" name="age">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="totEarns">Total Earning</label>
+                            <input type="number" class="form-control" name="totEarns">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="MedAidMember">Medical Aid Members</label>
+                            <input type="number" class="form-control" name="MedAidMember">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
