@@ -15,14 +15,16 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css">
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        
+
         <script>
             function validateForm() {
+                //Validating the textboxes
                 var typeEarning = document.forms["myForm"]["typeEarning"].value;
                 var year = document.forms["myForm"]["year"].value;
                 var totEarning = document.forms["myForm"]["totEarning"].value;
                 var age = document.forms["myForm"]["age"].value;
                 var MedAidMember = document.forms["myForm"]["MedAidMember"].value;
+
                 if (totEarning == "" || age == "" || MedAidMember == "") {
                     swal({
                         title: "Error!",
@@ -31,7 +33,7 @@ and open the template in the editor.
                         button: "Ok",
                     });
                     return false;
-                }else if (totEarning <0 || age <0 || MedAidMember <0) {
+                } else if (totEarning < 0 || age < 0 || MedAidMember < 0) {
                     swal({
                         title: "Error!",
                         text: "Pleae dont textbox cannat be less than 0",
@@ -39,7 +41,7 @@ and open the template in the editor.
                         button: "Ok",
                     });
                     return false;
-                }else if (typeEarning == "Choose..." || year == "Choose...") {
+                } else if (typeEarning == "Choose..." || year == "Choose...") {
                     swal({
                         title: "Error!",
                         text: "Please select the required information",

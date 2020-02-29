@@ -11,6 +11,7 @@ package za.co.thabo.business;
  */
 public class TaxCalculations2017 {
 
+     //Calculate a medical aid monthly and annual
     public double calMedAid2017(int medicalAid, String typeEarnings) {
         double medAmount = 0;
 
@@ -40,6 +41,7 @@ public class TaxCalculations2017 {
         return Math.round(medAmount * 100) / 100D;
     }
 
+    //Calculate rebate
     public double calcRebate2017(int age) {
         double totRebate = 0;
 
@@ -58,6 +60,7 @@ public class TaxCalculations2017 {
         return Math.round(totRebate * 100) / 100D;
     }
 
+    //Calaculate Tax
     public double CalculationPAYE2017(double rebate, double totEarns) {
         double a, b, c, d, e = 0;
 

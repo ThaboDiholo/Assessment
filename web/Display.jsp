@@ -98,7 +98,7 @@
                                     </tbody>
                                 </table>
                                 <span class="heading2" style="text-align: center;">
-                                   Deductions
+                                    Deductions
                                 </span>
                                 <table class="table table-striped">
                                     <thead>
@@ -128,7 +128,7 @@
                                             <td class="right"></td>
                                             <td class="right">R${medAid}</td>
                                         </tr>                                                                      
-                                        </tbod>                                    
+                                    </tbody>                                    
                                 </table>
 
                             </div>
