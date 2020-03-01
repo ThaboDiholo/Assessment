@@ -133,7 +133,7 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-sm-5"><br><br><br><hr>Signture</div>
+                                <div class="col-lg-4 col-sm-5"><br><br><br><hr style="opacity: 1.25"><Strong>Signture</strong></div>
                                 <div class="col-lg-4 col-sm-5 ml-auto">
                                     <table class="table table-clear">
                                         <tbody>

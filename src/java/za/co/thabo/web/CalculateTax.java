@@ -31,23 +31,20 @@ public class CalculateTax extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //=========================Declaring variable and Objects==============================
-        double medAid = 0, rebate, calcRebate2017 = 0, calcRebate2018, annaulySalary, annually = 0;
+        double medAid = 0, rebate, calcRebate2017 = 0, calcRebate2018, annaulySalary = 0, annually = 0;
 
         TaxCalculations2017 objCalculations = new TaxCalculations2017();
         TaxCalculations2018 objCal = new TaxCalculations2018();
         //==========================End=======================================
 
         //Values from index.html
-        String strYear = request.getParameter("typeEarning");
         int year = Integer.parseInt(request.getParameter("year"));
         int age = Integer.parseInt(request.getParameter("age"));
         double totEarns = Double.parseDouble(request.getParameter("totEarns"));
         String strTypeEarning = request.getParameter("typeEarning");
         int medicalAid = Integer.parseInt(request.getParameter("MedAidMember"));
-        
+
         //end
-        
-            
         if (strTypeEarning.equalsIgnoreCase("Annually")) {
             annaulySalary = totEarns;
         } else {
